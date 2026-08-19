@@ -5,6 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sistemas de Seguridad y Servicios Profesionales | Catálogo</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Custom CSS to crop out the outer dark background space */
+        .logo-crop-container {
+            overflow: hidden;
+            max-height: 220px; /* Adjusts height to crop top/bottom */
+        }
+        .logo-cropped-img {
+            margin-top: -12%; /* Pulls image up to cut top dead space */
+            margin-bottom: -12%; /* Pulls image down to cut bottom dead space */
+            transform: scale(1.02);
+        }
+    </style>
 </head>
 <body class="bg-slate-950 text-slate-100 min-h-screen font-sans antialiased">
 
@@ -18,9 +30,11 @@
         </div>
     </header>
 
-    <!-- Seamless, Blended Logo Showcase Section -->
-    <section class="pt-8 pb-2 px-4 text-center max-w-3xl mx-auto flex flex-col items-center">
-        <img src="images/logo.jpg" alt="Seguridad Total CR Logo" class="w-full h-auto max-w-lg object-contain drop-shadow-2xl">
+    <!-- Cropped, Seamless, Blended Logo Showcase Section -->
+    <section class="pt-6 pb-2 px-4 text-center max-w-3xl mx-auto flex flex-col items-center">
+        <div class="w-full max-w-lg rounded-2xl logo-crop-container flex justify-center items-center">
+            <img src="images/logo.jpg" alt="Seguridad Total CR Logo" class="w-full object-cover logo-cropped-img">
+        </div>
     </section>
 
     <!-- Hero Section -->
