@@ -1,5 +1,6 @@
 // Vercel Serverless Function: POST /api/gemini
-// Lives at the repo root (not under "CCTV website/") because Vercel function paths may not contain spaces.
+// Lives in the Vercel Root Directory ("CCTV website"). "Include files outside the root directory" must stay OFF,
+// otherwise Vercel names the function "CCTV website/api/gemini.js" and rejects it for containing a space.
 //
 // Keeps the Gemini API key on the server. The website posts a generateContent
 // request body here; this function validates and limits it, adds a fixed
