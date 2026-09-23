@@ -700,8 +700,8 @@
            CONFIG
            ============================================================ */
         const WHATSAPP_NUMBER = '50685693026';
-        // Set to your GA4 Measurement ID (e.g. 'G-XXXXXXXXXX') to enable analytics.
-        const GA_MEASUREMENT_ID = '';
+        // GA4 Measurement ID. Set to '' to disable analytics.
+        const GA_MEASUREMENT_ID = 'G-GH3TMXK9DQ';
         // Ambient hero loop (Mixkit, free license). Set to '' to use the animated canvas only.
         const HERO_VIDEO_URL = 'https://assets.mixkit.co/videos/48922/48922-720.mp4';
 
@@ -711,7 +711,7 @@
         // Option B (quick start): paste a Gemini API key below. It will be visible in the page source,
         //   so restrict it to your domain (HTTP referrer) in Google Cloud Console.
         // With neither set, the assessor and chat use the built-in local engine.
-        const GEMINI_PROXY_URL = '';
+        const GEMINI_PROXY_URL = '/api/gemini'; // Vercel function in api/gemini.js (needs GEMINI_API_KEY env var)
         const GEMINI_API_KEY = '';
         const GEMINI_MODEL = 'gemini-3.8-flash';
         const GEMINI_ENDPOINT = 'https://generativelanguage.googleapis.com/v1beta/models/' + GEMINI_MODEL + ':generateContent';
@@ -772,7 +772,7 @@
                         body: JSON.stringify(body),
                         signal: ctrl.signal
                     });
-                    if (res.status === 429 || res.status >= 500) throw new Error('retryable:' + res.status);
+                    if (res.status === 429 || res.status === 502 || res.status === 503 || res.status === 504) throw new Error('retryable:' + res.status);
                     if (!res.ok) throw new Error('gemini-http-' + res.status);
                     const data = await res.json();
                     const text = data && data.candidates && data.candidates[0] && data.candidates[0].content
