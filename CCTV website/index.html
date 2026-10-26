@@ -38,8 +38,8 @@
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
 
-    <!-- Chart.js -->
-    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"></script>
+    <!-- Chart.js is loaded on demand when the #analisis section approaches the viewport (see CHARTS in the script) -->
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
 
     <style>
         html, body { background: #090d16; }
@@ -197,7 +197,7 @@
         <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between gap-3">
             <a href="#top" class="flex items-center gap-3 min-w-0">
                 <span class="relative w-10 h-10 shrink-0 rounded-xl overflow-hidden ring-1 ring-cyan-500/40 shadow-[0_0_18px_-4px_rgba(6,182,212,.7)]">
-                    <img src="images/logo.jpg" alt="" class="w-full h-full object-cover" style="transform:scale(2.3);transform-origin:50% 31%;">
+                    <img src="images/logo-192.webp" alt="" width="40" height="40" decoding="async" class="w-full h-full object-cover" style="transform:scale(2.3);transform-origin:50% 31%;">
                 </span>
                 <span class="font-bold tracking-tight text-sm sm:text-lg truncate">TH<span class="text-cyan-400">Soluciones</span>-CR</span>
             </a>
@@ -257,21 +257,27 @@
                     <span class="pulse-dot w-2 h-2 rounded-full bg-emerald-400 text-emerald-400"></span>
                     <span data-i18n="hero_tag">Soluciones integrales para hogar y negocio</span>
                 </span>
-                <h1 class="mt-5 text-4xl sm:text-6xl font-bold tracking-tight leading-[1.05]">
-                    <span data-i18n="hero_title">Protección, Energía y Confort</span>
-                    <span class="block text-gradient">24/7</span>
+                <h1 class="mt-5 text-3xl sm:text-5xl font-bold tracking-tight leading-[1.1]">
+                    <span data-i18n="hero_title">Videovigilancia, Climatización, Instalaciones Eléctricas y Sistemas Perimetrales</span>
+                    <span class="block mt-1 text-gradient" data-i18n="hero_title2">en Costa Rica, 24/7</span>
                 </h1>
                 <p class="mt-5 text-slate-300 text-base sm:text-lg max-w-xl" data-i18n="hero_sub">
-                    Especialistas en videovigilancia, instalaciones eléctricas, climatización y sistemas perimetrales. ¡Aprovecha nuestras ofertas por tiempo limitado!
+                    Protección, energía y confort para tu hogar o negocio, instalados por nuestro equipo técnico. ¡Aprovecha nuestras ofertas por tiempo limitado!
                 </p>
-                <div class="mt-8 flex flex-col sm:flex-row gap-3">
+                <div class="mt-8 flex flex-col gap-3 max-w-xl">
                     <a href="https://wa.me/50685693026?text=Hola,%20quiero%20cotizar%20un%20sistema%20de%20seguridad" target="_blank" rel="noopener" data-lead-source="hero"
-                       class="inline-flex justify-center items-center gap-2 bg-gradient-to-r from-neon to-glow text-white font-bold px-6 py-3.5 rounded-xl shadow-[0_0_30px_-8px_rgba(59,130,246,.9)] hover:brightness-110 transition">
-                        <i class="fa-brands fa-whatsapp text-lg"></i><span data-i18n="hero_cta1">Cotizar por WhatsApp</span>
+                       class="inline-flex justify-center items-center gap-2 bg-secure hover:bg-emerald-400 text-obsidian text-lg font-bold px-6 py-4 rounded-xl shadow-[0_0_30px_-6px_rgba(16,185,129,.9)] transition">
+                        <i class="fa-brands fa-whatsapp text-xl"></i><span data-i18n="hero_cta1">Cotizar por WhatsApp</span>
                     </a>
-                    <a href="#asesor" class="inline-flex justify-center items-center gap-2 border border-slate-700 hover:border-cyan-400 text-slate-100 font-semibold px-6 py-3.5 rounded-xl bg-ink/60 backdrop-blur transition">
-                        <i class="fa-solid fa-terminal text-cyan-400"></i><span data-i18n="hero_cta2">Evaluar mi propiedad</span>
-                    </a>
+                    <div class="grid grid-cols-2 gap-3">
+                        <a href="https://wa.me/c/50685693026" target="_blank" rel="noopener" data-lead-source="hero_catalog"
+                           class="inline-flex justify-center items-center gap-2 border border-cyan-500/50 hover:border-cyan-300 text-cyan-100 font-semibold px-3 sm:px-6 py-3.5 rounded-xl bg-cyan-500/10 backdrop-blur transition text-sm sm:text-base">
+                            <i class="fa-solid fa-store text-cyan-300"></i><span data-i18n="hero_catalog">Ver catálogo</span>
+                        </a>
+                        <a href="#asesor" class="inline-flex justify-center items-center gap-2 border border-slate-700 hover:border-cyan-400 text-slate-100 font-semibold px-3 sm:px-6 py-3.5 rounded-xl bg-ink/60 backdrop-blur transition text-sm sm:text-base">
+                            <i class="fa-solid fa-terminal text-cyan-400"></i><span data-i18n="hero_cta2">Evaluar mi propiedad</span>
+                        </a>
+                    </div>
                 </div>
 
                 <!-- Animated stats -->
@@ -309,24 +315,24 @@
                     </div>
                     <div class="grid grid-cols-2 gap-2 sm:gap-3">
                         <div class="relative aspect-video rounded-lg overflow-hidden scanlines bg-steel">
-                            <img src="images/bala-exterior.jpg" alt="" class="w-full h-full object-cover brightness-75 contrast-125" loading="eager">
+                            <img src="images/bala-exterior-480.webp" srcset="images/bala-exterior-480.webp 480w, images/bala-exterior-960.webp 960w" sizes="(min-width: 1024px) 300px, 50vw" width="480" height="262" decoding="async" alt="" class="w-full h-full object-cover brightness-75 contrast-125">
                             <div class="scan-bar"></div>
                             <div class="detect-box" style="left:28%;top:22%;width:34%;height:52%;"></div>
                             <span class="absolute top-1.5 left-1.5 font-mono text-[9px] sm:text-[10px] bg-obsidian/80 px-1.5 py-0.5 rounded text-emerald-300" data-i18n="cam1">CAM-01 · ENTRADA</span>
                             <span class="absolute bottom-1.5 left-1.5 font-mono text-[9px] sm:text-[10px] bg-emerald-500/90 text-obsidian font-semibold px-1.5 py-0.5 rounded" data-i18n="feed_detect">MOVIMIENTO</span>
                         </div>
                         <div class="relative aspect-video rounded-lg overflow-hidden scanlines bg-steel">
-                            <img src="images/domo-exterior.jpg" alt="" class="w-full h-full object-cover brightness-75 contrast-125" loading="eager">
+                            <img src="images/domo-exterior-480.webp" srcset="images/domo-exterior-480.webp 480w, images/domo-exterior-960.webp 960w" sizes="(min-width: 1024px) 300px, 50vw" width="480" height="262" decoding="async" alt="" class="w-full h-full object-cover brightness-75 contrast-125">
                             <div class="scan-bar" style="animation-delay:-1.5s"></div>
                             <span class="absolute top-1.5 left-1.5 font-mono text-[9px] sm:text-[10px] bg-obsidian/80 px-1.5 py-0.5 rounded text-cyan-300" data-i18n="cam2">CAM-02 · PATIO</span>
                         </div>
                         <div class="relative aspect-video rounded-lg overflow-hidden scanlines bg-steel">
-                            <img src="images/camara-ptz.jpg" alt="" class="w-full h-full object-cover brightness-75 contrast-125" loading="eager">
+                            <img src="images/camara-ptz-480.webp" srcset="images/camara-ptz-480.webp 480w, images/camara-ptz-960.webp 960w" sizes="(min-width: 1024px) 300px, 50vw" width="480" height="262" decoding="async" alt="" class="w-full h-full object-cover brightness-75 contrast-125">
                             <div class="scan-bar" style="animation-delay:-3s"></div>
                             <span class="absolute top-1.5 left-1.5 font-mono text-[9px] sm:text-[10px] bg-obsidian/80 px-1.5 py-0.5 rounded text-cyan-300" data-i18n="cam3">CAM-03 · PTZ 360°</span>
                         </div>
                         <div class="relative aspect-video rounded-lg overflow-hidden scanlines bg-steel">
-                            <img src="images/dvr-nvr.jpg" alt="" class="w-full h-full object-cover brightness-75 contrast-125" loading="eager">
+                            <img src="images/dvr-nvr-480.webp" srcset="images/dvr-nvr-480.webp 480w, images/dvr-nvr-960.webp 960w" sizes="(min-width: 1024px) 300px, 50vw" width="480" height="262" decoding="async" alt="" class="w-full h-full object-cover brightness-75 contrast-125">
                             <div class="scan-bar" style="animation-delay:-2.2s"></div>
                             <span class="absolute top-1.5 left-1.5 font-mono text-[9px] sm:text-[10px] bg-obsidian/80 px-1.5 py-0.5 rounded text-cyan-300" data-i18n="cam4">NVR · 4 CANALES</span>
                         </div>
@@ -382,11 +388,11 @@
             <div class="lg:col-span-3 reveal">
                 <div id="compare" class="relative aspect-[16/10] rounded-2xl overflow-hidden border border-slate-700 select-none shadow-2xl" style="--pos:50%;">
                     <!-- Enhanced (full) layer -->
-                    <img id="cmp-hd" src="images/bala-exterior.jpg" alt="" class="absolute inset-0 w-full h-full object-cover" loading="lazy" draggable="false">
+                    <img id="cmp-hd" src="images/bala-exterior-960.webp" srcset="images/bala-exterior-960.webp 960w, images/bala-exterior.webp 1408w" sizes="(min-width: 1024px) 750px, 100vw" width="960" height="524" alt="" class="absolute inset-0 w-full h-full object-cover" loading="lazy" decoding="async" draggable="false">
                     <div class="detect-box" style="left:56%;top:24%;width:24%;height:46%;animation:none;"></div>
                     <!-- Standard (clipped) layer -->
                     <div class="absolute inset-0" style="clip-path: inset(0 calc(100% - var(--pos)) 0 0);">
-                        <img id="cmp-std" src="images/bala-exterior.jpg" alt="" class="absolute inset-0 w-full h-full object-cover" loading="lazy" draggable="false">
+                        <img id="cmp-std" src="images/bala-exterior-960.webp" srcset="images/bala-exterior-960.webp 960w, images/bala-exterior.webp 1408w" sizes="(min-width: 1024px) 750px, 100vw" width="960" height="524" alt="" class="absolute inset-0 w-full h-full object-cover" loading="lazy" decoding="async" draggable="false">
                         <div class="absolute inset-0 noise" aria-hidden="true"></div>
                     </div>
                     <!-- Labels -->
@@ -643,22 +649,34 @@
                    class="mt-6 inline-flex items-center gap-2 bg-secure hover:bg-emerald-400 text-obsidian font-bold px-6 py-3.5 rounded-xl shadow-[0_0_30px_-8px_rgba(16,185,129,.9)] transition">
                     <i class="fa-brands fa-whatsapp text-lg"></i><span data-i18n="cta_btn">Hablar por WhatsApp</span>
                 </a>
+                <p class="mt-4 text-sm text-slate-400">
+                    <span data-i18n="call_label">o llámanos al</span>
+                    <a href="tel:+50685693026" data-lead-source="cta_band" class="font-mono text-cyan-300 hover:text-cyan-200 underline underline-offset-4 whitespace-nowrap"><i class="fa-solid fa-phone text-xs mr-1"></i>+506 8569 3026</a>
+                </p>
             </div>
             <div class="relative mx-auto w-48 sm:w-60">
-                <img src="images/logo.jpg" alt="THSoluciones-CR" class="w-full h-auto rounded-2xl shadow-2xl ring-1 ring-slate-700" loading="lazy">
+                <img src="images/logo-480.webp" alt="THSoluciones-CR" width="480" height="480" class="w-full h-auto rounded-2xl shadow-2xl ring-1 ring-slate-700" loading="lazy" decoding="async">
             </div>
         </div>
     </section>
 
     <!-- ============ FOOTER ============ -->
-    <footer class="border-t border-slate-800 bg-obsidian py-10 text-center text-slate-500 text-sm">
+    <footer class="border-t border-slate-800 bg-obsidian pt-10 pb-28 md:pb-10 text-center text-slate-500 text-sm">
         <p class="font-semibold text-slate-300">TH<span class="text-cyan-400">Soluciones</span>-CR</p>
+        <p class="mt-2"><a href="tel:+50685693026" data-lead-source="footer" class="font-mono text-slate-300 hover:text-cyan-300"><i class="fa-solid fa-phone text-xs mr-1"></i>+506 8569 3026</a></p>
         <p class="mt-2">&copy; 2026 THSoluciones-CR. <span data-i18n="footer_rights">Todos los derechos reservados.</span></p>
         <p class="mt-1">Powered &amp; Engineered by <a href="https://auralinkdigital.com" target="_blank" rel="noopener" class="text-cyan-400 hover:text-cyan-300 font-semibold underline">Auralinkdigital.com</a></p>
     </footer>
 
+    <!-- ============ STICKY MOBILE WHATSAPP CTA ============ -->
+    <a id="wa-fab" href="https://wa.me/50685693026?text=Hola,%20quiero%20cotizar%20un%20sistema%20de%20seguridad" target="_blank" rel="noopener" data-lead-source="sticky_mobile"
+       class="md:hidden inline-flex items-center gap-2 h-14 pl-4 pr-5 rounded-full bg-[#25D366] text-[#062a16] font-bold text-base shadow-[0_8px_28px_-6px_rgba(37,211,102,.85)] ring-2 ring-obsidian active:scale-95 transition"
+       style="position:fixed;bottom:16px;right:16px;z-index:50;" aria-label="Cotizar por WhatsApp" data-i18n-aria="fab_wa_aria">
+        <i class="fa-brands fa-whatsapp text-2xl" aria-hidden="true"></i><span data-i18n="fab_wa">Cotizar</span>
+    </a>
+
     <!-- ============ ROBOCAM ASSISTANT (HUD DRAWER) ============ -->
-    <button id="chat-fab" type="button" class="fixed z-[60] bottom-4 right-4 sm:bottom-6 sm:right-6 w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-gradient-to-br from-neon to-glow text-white shadow-[0_0_30px_-4px_rgba(6,182,212,.9)] flex items-center justify-center hover:scale-105 transition" aria-controls="chat-panel" aria-expanded="false" aria-label="Abrir asistente" data-i18n-aria="chat_open">
+    <button id="chat-fab" type="button" class="fixed z-[60] bottom-[88px] right-4 md:bottom-6 md:right-6 w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-gradient-to-br from-neon to-glow text-white shadow-[0_0_30px_-4px_rgba(6,182,212,.9)] flex items-center justify-center hover:scale-105 transition" aria-controls="chat-panel" aria-expanded="false" aria-label="Abrir asistente" data-i18n-aria="chat_open">
         <span class="absolute inset-0 rounded-full border-2 border-cyan-300/50 border-dashed hud-ring" aria-hidden="true"></span>
         <i class="fa-solid fa-robot text-xl sm:text-2xl"></i>
         <span class="absolute top-0.5 right-0.5 w-3.5 h-3.5 rounded-full bg-emerald-400 border-2 border-obsidian"></span>
@@ -733,8 +751,51 @@
             window.gtag('config', GA_MEASUREMENT_ID);
         }
 
+        /* ============================================================
+           UTM PERSISTENCE
+           ============================================================ */
+        // The latest UTM-tagged landing is stored for 30 days, so a visitor who returns later and
+        // taps WhatsApp is still attributed to the campaign that brought them.
+        const UTM_KEYS = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content'];
+        const UTM_TTL_MS = 30 * 24 * 60 * 60 * 1000;
+        const utm = (function () {
+            const fresh = {};
+            const qs = new URLSearchParams(window.location.search);
+            UTM_KEYS.forEach(k => { const v = qs.get(k); if (v) fresh[k] = v.slice(0, 100); });
+            try {
+                if (Object.keys(fresh).length) {
+                    localStorage.setItem('ths-utm', JSON.stringify({ ts: Date.now(), params: fresh }));
+                    return fresh;
+                }
+                const saved = JSON.parse(localStorage.getItem('ths-utm') || 'null');
+                if (saved && Date.now() - saved.ts < UTM_TTL_MS) return saved.params || {};
+            } catch (e) { /* storage unavailable */ }
+            return fresh;
+        })();
+        const hasUtm = Object.keys(utm).length > 0;
+
+        // Carries UTMs onto links that leave this page: same-site pages get them as query params,
+        // WhatsApp chats get a short reference tag appended to the prefilled message.
+        function withUtm(href) {
+            if (!hasUtm) return href;
+            let url;
+            try { url = new URL(href, window.location.href); } catch (e) { return href; }
+            if (url.hostname === 'wa.me' || url.hostname === 'api.whatsapp.com') {
+                const text = url.searchParams.get('text');
+                if (text === null || text.includes('(ref:')) return href; // catalog links have no message
+                const ref = [utm.utm_source, utm.utm_medium, utm.utm_campaign].filter(Boolean).join(' · ');
+                // Rebuilt with encodeURIComponent: URLSearchParams would encode spaces as '+'
+                return url.origin + url.pathname + '?text=' + encodeURIComponent(text + '\n\n(ref: ' + ref + ')');
+            }
+            if (url.origin === window.location.origin && url.pathname !== window.location.pathname) {
+                UTM_KEYS.forEach(k => { if (utm[k] && !url.searchParams.has(k)) url.searchParams.set(k, utm[k]); });
+                return url.toString();
+            }
+            return href;
+        }
+
         function trackGAEvent(eventName, params) {
-            const payload = Object.assign({ language: currentLang }, params || {});
+            const payload = Object.assign({ language: currentLang }, utm, params || {});
             if (GA_MEASUREMENT_ID && typeof window.gtag === 'function') {
                 window.gtag('event', eventName, payload);
             } else {
@@ -743,11 +804,28 @@
         }
         window.trackGAEvent = trackGAEvent;
 
-        // Every WhatsApp link counts as a lead.
-        document.addEventListener('click', function (e) {
-            const a = e.target.closest('a[href*="wa.me"]');
-            if (a) trackGAEvent('generate_lead', { lead_source: a.dataset.leadSource || 'link' });
-        });
+        // Delegated so it also covers links rendered later (products, plans, assessor, chat).
+        function handleOutboundLink(e) {
+            const a = e.target.closest('a[href]');
+            if (!a) return;
+            const href = a.getAttribute('href');
+            const source = a.dataset.leadSource || 'link';
+            if (/^tel:/i.test(href)) {
+                trackGAEvent('click_phone', { lead_source: source });
+                return;
+            }
+            if (/(^|\/\/)(wa\.me|api\.whatsapp\.com)\//i.test(href)) {
+                a.href = withUtm(a.href);
+                if (e.type !== 'click') return; // middle-click: keep the UTM tag, count only real taps
+                const linkType = /wa\.me\/c\//i.test(href) ? 'catalog' : 'chat';
+                trackGAEvent('click_whatsapp', { lead_source: source, link_type: linkType });
+                trackGAEvent('generate_lead', { lead_source: source });
+                return;
+            }
+            if (!href.startsWith('#')) a.href = withUtm(a.href);
+        }
+        document.addEventListener('click', handleOutboundLink);
+        document.addEventListener('auxclick', handleOutboundLink);
 
         function waLink(text) {
             return 'https://wa.me/' + WHATSAPP_NUMBER + '?text=' + encodeURIComponent(text);
@@ -812,9 +890,11 @@
                 nav_assessor: 'Asesor', nav_services: 'Servicios', nav_whatsapp: 'WhatsApp Directo',
                 lang_aria: 'Switch to English',
                 hero_tag: 'Soluciones integrales para hogar y negocio',
-                hero_title: 'Protección, Energía y Confort',
-                hero_sub: 'Especialistas en videovigilancia, instalaciones eléctricas, climatización y sistemas perimetrales. ¡Aprovecha nuestras ofertas por tiempo limitado!',
-                hero_cta1: 'Cotizar por WhatsApp', hero_cta2: 'Evaluar mi propiedad',
+                hero_title: 'Videovigilancia, Climatización, Instalaciones Eléctricas y Sistemas Perimetrales',
+                hero_title2: 'en Costa Rica, 24/7',
+                hero_sub: 'Protección, energía y confort para tu hogar o negocio, instalados por nuestro equipo técnico. ¡Aprovecha nuestras ofertas por tiempo limitado!',
+                hero_cta1: 'Cotizar por WhatsApp', hero_cta2: 'Evaluar mi propiedad', hero_catalog: 'Ver catálogo',
+                fab_wa: 'Cotizar', fab_wa_aria: 'Cotizar por WhatsApp',
                 stat1: 'Acceso remoto', stat2: 'Resistencia exterior', stat3: 'Rotación PTZ', stat4: 'Especialidades técnicas',
                 feed_status: 'ENLACE SEGURO', feed_detect: 'MOVIMIENTO',
                 cam1: 'CAM-01 · ENTRADA', cam2: 'CAM-02 · PATIO', cam3: 'CAM-03 · PTZ 360°', cam4: 'NVR · 4 CANALES',
@@ -896,7 +976,7 @@
                 s3_title: 'Cercas eléctricas perimetrales', s3_desc: 'Instalación y mantenimiento de sistemas de alta seguridad perimetral para disuasión y protección contra intrusos.', s3_cta: 'Cotizar cerca',
 
                 cta_title: '¿Listo para proteger lo que más importa?', cta_sub: 'Escríbenos y un técnico te responde con una cotización a la medida de tu propiedad.', cta_btn: 'Hablar por WhatsApp',
-                footer_rights: 'Todos los derechos reservados.',
+                footer_rights: 'Todos los derechos reservados.', call_label: 'o llámanos al',
 
                 chat_open: 'Abrir asistente RoboCam', chat_close: 'Cerrar asistente', chat_send: 'Enviar', chat_status: 'Asistente en línea', chat_status_ai: 'IA Gemini en línea',
                 log_ai: 'Consultando motor Gemini AI…', res_engine_ai: 'ANALIZADO CON GEMINI AI', res_engine_local: 'MOTOR LOCAL', res_tips: 'Consejos de seguridad',
@@ -919,9 +999,11 @@
                 nav_assessor: 'Assessor', nav_services: 'Services', nav_whatsapp: 'WhatsApp Us',
                 lang_aria: 'Cambiar a español',
                 hero_tag: 'Integrated solutions for home & business',
-                hero_title: 'Protection, Power & Comfort',
-                hero_sub: 'Specialists in video surveillance, electrical installations, climate control and perimeter systems. Take advantage of our limited-time offers!',
-                hero_cta1: 'Get a quote on WhatsApp', hero_cta2: 'Assess my property',
+                hero_title: 'Video Surveillance, Climate Control, Electrical Installations & Perimeter Systems',
+                hero_title2: 'in Costa Rica, 24/7',
+                hero_sub: 'Protection, power and comfort for your home or business, installed by our technical team. Take advantage of our limited-time offers!',
+                hero_cta1: 'Get a quote on WhatsApp', hero_cta2: 'Assess my property', hero_catalog: 'View catalog',
+                fab_wa: 'Get a quote', fab_wa_aria: 'Get a quote on WhatsApp',
                 stat1: 'Remote access', stat2: 'Outdoor rating', stat3: 'PTZ rotation', stat4: 'Technical specialties',
                 feed_status: 'SECURE LINK', feed_detect: 'MOTION',
                 cam1: 'CAM-01 · ENTRANCE', cam2: 'CAM-02 · YARD', cam3: 'CAM-03 · PTZ 360°', cam4: 'NVR · 4 CHANNELS',
@@ -1003,7 +1085,7 @@
                 s3_title: 'Perimeter electric fences', s3_desc: 'Installation and maintenance of high-security perimeter systems to deter and protect against intruders.', s3_cta: 'Quote a fence',
 
                 cta_title: 'Ready to protect what matters most?', cta_sub: 'Message us and a technician will reply with a quote tailored to your property.', cta_btn: 'Chat on WhatsApp',
-                footer_rights: 'All rights reserved.',
+                footer_rights: 'All rights reserved.', call_label: 'or call us at',
 
                 chat_open: 'Open RoboCam assistant', chat_close: 'Close assistant', chat_send: 'Send', chat_status: 'Assistant online', chat_status_ai: 'Gemini AI online',
                 log_ai: 'Querying Gemini AI engine…', res_engine_ai: 'ANALYZED WITH GEMINI AI', res_engine_local: 'LOCAL ENGINE', res_tips: 'Security tips',
@@ -1145,16 +1227,25 @@
                 if (running && !was && !prefersReducedMotion) { cancelAnimationFrame(raf); raf = requestAnimationFrame(draw); }
             }).observe(canvas);
 
-            if (HERO_VIDEO_URL && !prefersReducedMotion) {
+            // The video is decorative: skip it on small screens and data-saver connections,
+            // and only start downloading after the page has finished loading.
+            const saveData = navigator.connection && navigator.connection.saveData;
+            if (HERO_VIDEO_URL && !prefersReducedMotion && !saveData && window.matchMedia('(min-width: 1024px)').matches) {
                 const video = document.getElementById('hero-video');
                 const tryPlay = () => video.play().catch(() => { /* autoplay blocked: canvas remains */ });
-                video.preload = 'auto';
-                video.src = HERO_VIDEO_URL;
-                video.addEventListener('playing', () => { video.classList.replace('opacity-0', 'opacity-50'); }, { once: true });
-                video.addEventListener('error', () => video.remove(), { once: true });
-                video.load();
-                tryPlay();
-                document.addEventListener('visibilitychange', () => { if (!document.hidden && video.paused) tryPlay(); });
+                const startVideo = () => {
+                    video.preload = 'auto';
+                    video.src = HERO_VIDEO_URL;
+                    video.addEventListener('playing', () => { video.classList.replace('opacity-0', 'opacity-50'); }, { once: true });
+                    video.addEventListener('error', () => video.remove(), { once: true });
+                    video.load();
+                    tryPlay();
+                    document.addEventListener('visibilitychange', () => { if (!document.hidden && video.paused) tryPlay(); });
+                };
+                if (document.readyState === 'complete') startVideo();
+                else window.addEventListener('load', startVideo, { once: true });
+            } else {
+                document.getElementById('hero-video').remove();
             }
         })();
 
@@ -1193,12 +1284,12 @@
            PRODUCTS
            ============================================================ */
         const products = [
-            { id: 'p1', img: 'images/camara-ptz.jpg', cat: 'camera', icon: 'fa-video', badges: ['b_ptz', 'b_autotrack', 'b_audio'], wa: 'Hola, me interesa la Cámara PTZ Motorizada' },
-            { id: 'p2', img: 'images/domo-exterior.jpg', cat: 'camera', icon: 'fa-circle-dot', badges: ['b_ip67', 'b_colornight', 'b_alerts'], wa: 'Hola, me interesa el Domo Exterior Inteligente' },
-            { id: 'p3', img: 'images/bala-exterior.jpg', cat: 'camera', icon: 'fa-crosshairs', badges: ['b_longrange', 'b_ir'], wa: 'Hola, me interesa la Cámara Tipo Bala Pro' },
-            { id: 'p4', img: 'images/dvr-nvr.jpg', cat: 'recording', icon: 'fa-server', badges: ['b_multich', 'b_remote'], wa: 'Hola, me interesa el Sistema Grabador DVR/NVR' },
-            { id: 'p5', img: 'images/disco-duro.jpg', cat: 'recording', icon: 'fa-hard-drive', badges: ['b_247', 'b_nodrop'], wa: 'Hola, me interesa el Disco Duro Especializado' },
-            { id: 'p6', img: 'images/fuente-poder.png', cat: 'power', icon: 'fa-plug-circle-bolt', badges: ['b_surge', 'b_stable'], wa: 'Hola, me interesa la Fuente de Poder Regulada' }
+            { id: 'p1', img: 'images/camara-ptz-480.webp', srcset: 'images/camara-ptz-480.webp 480w, images/camara-ptz-960.webp 960w', cat: 'camera', icon: 'fa-video', badges: ['b_ptz', 'b_autotrack', 'b_audio'], wa: 'Hola, me interesa la Cámara PTZ Motorizada' },
+            { id: 'p2', img: 'images/domo-exterior-480.webp', srcset: 'images/domo-exterior-480.webp 480w, images/domo-exterior-960.webp 960w', cat: 'camera', icon: 'fa-circle-dot', badges: ['b_ip67', 'b_colornight', 'b_alerts'], wa: 'Hola, me interesa el Domo Exterior Inteligente' },
+            { id: 'p3', img: 'images/bala-exterior-480.webp', srcset: 'images/bala-exterior-480.webp 480w, images/bala-exterior-960.webp 960w', cat: 'camera', icon: 'fa-crosshairs', badges: ['b_longrange', 'b_ir'], wa: 'Hola, me interesa la Cámara Tipo Bala Pro' },
+            { id: 'p4', img: 'images/dvr-nvr-480.webp', srcset: 'images/dvr-nvr-480.webp 480w, images/dvr-nvr-960.webp 960w', cat: 'recording', icon: 'fa-server', badges: ['b_multich', 'b_remote'], wa: 'Hola, me interesa el Sistema Grabador DVR/NVR' },
+            { id: 'p5', img: 'images/disco-duro-480.webp', srcset: 'images/disco-duro-480.webp 480w, images/disco-duro-960.webp 960w', cat: 'recording', icon: 'fa-hard-drive', badges: ['b_247', 'b_nodrop'], wa: 'Hola, me interesa el Disco Duro Especializado' },
+            { id: 'p6', img: 'images/fuente-poder.webp', cat: 'power', icon: 'fa-plug-circle-bolt', badges: ['b_surge', 'b_stable'], wa: 'Hola, me interesa la Fuente de Poder Regulada' }
         ];
         const badgeStyles = [
             'text-cyan-300 border-cyan-400/40 bg-cyan-400/10',
@@ -1212,7 +1303,7 @@
             grid.innerHTML = products.map((p, i) => `
                 <article class="product-card glass glow-hover rounded-2xl overflow-hidden flex flex-col reveal ${activeFilter !== 'all' && activeFilter !== p.cat ? 'hidden' : ''}" data-cat="${p.cat}" style="transition-delay:${(i % 3) * 80}ms">
                     <div class="relative h-52 overflow-hidden bg-steel group">
-                        <img src="${p.img}" alt="${escapeHTML(t(p.id + '_title'))}" class="w-full h-full object-cover transition duration-700 group-hover:scale-105" loading="lazy">
+                        <img src="${p.img}"${p.srcset ? ` srcset="${p.srcset}" sizes="(min-width: 1024px) 400px, (min-width: 640px) 50vw, 100vw"` : ''} width="480" height="262" alt="${escapeHTML(t(p.id + '_title'))}" class="w-full h-full object-cover transition duration-700 group-hover:scale-105" loading="lazy" decoding="async">
                         <div class="absolute inset-0 bg-gradient-to-t from-ink via-ink/10 to-transparent"></div>
                         <span class="absolute top-3 left-3 flex items-center gap-1.5 font-mono text-[10px] bg-obsidian/85 border border-emerald-500/40 text-emerald-300 px-2 py-1 rounded-md">
                             <span class="pulse-dot w-1.5 h-1.5 rounded-full bg-emerald-400 text-emerald-400"></span>ONLINE
@@ -1285,8 +1376,33 @@
            CHARTS (Chart.js)
            ============================================================ */
         let radarChart = null, zoneChart = null;
-        const chartsAvailable = typeof window.Chart !== 'undefined';
-        if (chartsAvailable) {
+        const CHART_JS_URL = 'https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js';
+
+        function hideCharts() {
+            document.querySelectorAll('#radar-chart, #zone-chart').forEach(c => c.closest('div').classList.add('hidden'));
+        }
+
+        // Chart.js (~200 KB) is only fetched when the analytics section is about to scroll into view.
+        // The canvases sit in fixed-height boxes, so the late render causes no layout shift.
+        (function lazyLoadCharts() {
+            const section = document.getElementById('analisis');
+            const load = () => {
+                const s = document.createElement('script');
+                s.src = CHART_JS_URL;
+                s.async = true;
+                s.onload = () => { initCharts(); updatePlanner(); };
+                s.onerror = hideCharts;
+                document.head.appendChild(s);
+            };
+            if (!('IntersectionObserver' in window)) return load();
+            const obs = new IntersectionObserver(entries => {
+                if (entries.some(e => e.isIntersecting)) { obs.disconnect(); load(); }
+            }, { rootMargin: '600px 0px' });
+            obs.observe(section);
+        })();
+
+        function initCharts() {
+            if (typeof window.Chart === 'undefined') return hideCharts();
             Chart.defaults.color = '#94a3b8';
             Chart.defaults.font.family = '"Space Grotesk", system-ui, sans-serif';
 
@@ -1329,8 +1445,6 @@
                     plugins: { legend: { display: false } }
                 }
             });
-        } else {
-            document.querySelectorAll('#radar-chart, #zone-chart').forEach(c => c.closest('div').classList.add('hidden'));
         }
 
         function updateRadarLabels() {
