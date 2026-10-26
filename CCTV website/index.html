@@ -668,12 +668,25 @@
         <p class="mt-1">Powered &amp; Engineered by <a href="https://auralinkdigital.com" target="_blank" rel="noopener" class="text-cyan-400 hover:text-cyan-300 font-semibold underline">Auralinkdigital.com</a></p>
     </footer>
 
-    <!-- ============ STICKY MOBILE WHATSAPP CTA ============ -->
-    <a id="wa-fab" href="https://wa.me/50685693026?text=Hola,%20quiero%20cotizar%20un%20sistema%20de%20seguridad" target="_blank" rel="noopener" data-lead-source="sticky_mobile"
-       class="md:hidden inline-flex items-center gap-2 h-14 pl-4 pr-5 rounded-full bg-[#25D366] text-[#062a16] font-bold text-base shadow-[0_8px_28px_-6px_rgba(37,211,102,.85)] ring-2 ring-obsidian active:scale-95 transition"
-       style="position:fixed;bottom:16px;right:16px;z-index:50;" aria-label="Cotizar por WhatsApp" data-i18n-aria="fab_wa_aria">
-        <i class="fa-brands fa-whatsapp text-2xl" aria-hidden="true"></i><span data-i18n="fab_wa">Cotizar</span>
-    </a>
+    <!-- ============ STICKY MOBILE WHATSAPP BAR ============ -->
+    <div id="wa-bar" class="md:hidden fixed bottom-0 left-0 right-0 z-50 p-3 bg-slate-900/95 backdrop-blur-md border-t border-slate-800 shadow-2xl">
+        <div class="flex items-center justify-between gap-3 max-w-md mx-auto">
+            <div class="flex items-center gap-2 pl-1">
+                <span class="relative flex h-3 w-3" aria-hidden="true">
+                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                    <span class="relative inline-flex rounded-full h-3 w-3 bg-emerald-500"></span>
+                </span>
+                <div class="flex flex-col">
+                    <span class="text-[11px] font-medium text-slate-300 leading-none" data-i18n="bar_status">Técnicos en línea</span>
+                    <span class="text-[10px] text-emerald-400 font-semibold leading-tight" data-i18n="bar_response">Respuesta &lt; 5 min</span>
+                </div>
+            </div>
+            <a href="https://wa.me/50685693026?text=Hola%20THSoluciones-CR,%20deseo%20consultar%20por%20un%20diagn%C3%B3stico%20de%20seguridad" target="_blank" rel="noopener" data-lead-source="sticky_mobile"
+               class="flex-1 flex items-center justify-center gap-2 bg-emerald-500 hover:bg-emerald-400 active:scale-95 transition-all text-obsidian font-bold py-2.5 px-3 rounded-xl whitespace-nowrap shadow-lg shadow-emerald-500/20 text-sm">
+                <i class="fa-brands fa-whatsapp text-lg" aria-hidden="true"></i><span data-i18n="hero_cta1">Cotizar por WhatsApp</span>
+            </a>
+        </div>
+    </div>
 
     <!-- ============ ROBOCAM ASSISTANT (HUD DRAWER) ============ -->
     <button id="chat-fab" type="button" class="fixed z-[60] bottom-[88px] right-4 md:bottom-6 md:right-6 w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-gradient-to-br from-neon to-glow text-white shadow-[0_0_30px_-4px_rgba(6,182,212,.9)] flex items-center justify-center hover:scale-105 transition" aria-controls="chat-panel" aria-expanded="false" aria-label="Abrir asistente" data-i18n-aria="chat_open">
@@ -894,7 +907,7 @@
                 hero_title2: 'en Costa Rica, 24/7',
                 hero_sub: 'Protección, energía y confort para tu hogar o negocio, instalados por nuestro equipo técnico. ¡Aprovecha nuestras ofertas por tiempo limitado!',
                 hero_cta1: 'Cotizar por WhatsApp', hero_cta2: 'Evaluar mi propiedad', hero_catalog: 'Ver catálogo',
-                fab_wa: 'Cotizar', fab_wa_aria: 'Cotizar por WhatsApp',
+                bar_status: 'Técnicos en línea', bar_response: 'Respuesta < 5 min',
                 stat1: 'Acceso remoto', stat2: 'Resistencia exterior', stat3: 'Rotación PTZ', stat4: 'Especialidades técnicas',
                 feed_status: 'ENLACE SEGURO', feed_detect: 'MOVIMIENTO',
                 cam1: 'CAM-01 · ENTRADA', cam2: 'CAM-02 · PATIO', cam3: 'CAM-03 · PTZ 360°', cam4: 'NVR · 4 CANALES',
@@ -1003,7 +1016,7 @@
                 hero_title2: 'in Costa Rica, 24/7',
                 hero_sub: 'Protection, power and comfort for your home or business, installed by our technical team. Take advantage of our limited-time offers!',
                 hero_cta1: 'Get a quote on WhatsApp', hero_cta2: 'Assess my property', hero_catalog: 'View catalog',
-                fab_wa: 'Get a quote', fab_wa_aria: 'Get a quote on WhatsApp',
+                bar_status: 'Technicians online', bar_response: 'Reply in < 5 min',
                 stat1: 'Remote access', stat2: 'Outdoor rating', stat3: 'PTZ rotation', stat4: 'Technical specialties',
                 feed_status: 'SECURE LINK', feed_detect: 'MOTION',
                 cam1: 'CAM-01 · ENTRANCE', cam2: 'CAM-02 · YARD', cam3: 'CAM-03 · PTZ 360°', cam4: 'NVR · 4 CHANNELS',
